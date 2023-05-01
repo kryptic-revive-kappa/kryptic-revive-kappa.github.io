@@ -188,7 +188,7 @@
 </head>
 
 <body>
-	<audio id="myAudio" loop muted>
+	<audio id="myAudio" loop>
 		<source src="assets/music.mp3" type="audio/mpeg">
 		Your browser does not support the audio element.
 	</audio>
@@ -197,18 +197,27 @@
 		<img class="logo" src="panoramiclogo.svg" alt="Logo">
 		<h1>Coming Soon</h1>
 	</a>
+	<!-- Add a button to play the audio -->
+	<button id="playAudio" style="display: none;">Play Audio</button>
 	<script>
 		document.body.addEventListener('click', function () {
 			window.open('https://www.discord.gg/panoramicrp/', '_blank');
-			
-			// Play the audio when the body is clicked
+		});
+
+		// Show the Play Audio button after a delay
+		setTimeout(function() {
+			var playAudioButton = document.getElementById("playAudio");
+			playAudioButton.style.display = "block";
+		}, 1000); // Change this number to set the delay in milliseconds
+
+		// Play the audio when the button is clicked
+		document.getElementById("playAudio").addEventListener('click', function () {
 			var audio = document.getElementById("myAudio");
 			audio.play();
 		});
-
-		// Remove the setTimeout function as it is not needed
 	</script>
 </body>
+
 
 
 </html>
