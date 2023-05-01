@@ -188,12 +188,10 @@
 </head>
 
 <body>
-
-	<audio controls autoplay>
-	<source src="music.mp3" type="audio/mpeg">
-	Your browser does not support the audio element.
+	<audio id="myAudio" autoplay loop>
+		<source src="assets/music.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
 	</audio>
-
 	<div class="scenery"></div>
 	<a href="https://www.discord.gg/panoramicrp/" target="_blank">
 		<img class="logo" src="panoramiclogo.svg" alt="Logo">
@@ -203,7 +201,14 @@
 		document.body.addEventListener('click', function () {
 			window.open('https://www.discord.gg/panoramicrp/', '_blank');
 		});
+
+		// Auto-play audio after a delay
+		setTimeout(function() {
+			var audio = document.getElementById("myAudio");
+			audio.play();
+		}, 1000); // Change this number to set the delay in milliseconds
 	</script>
 </body>
+
 
 </html>
